@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_wine
@@ -63,8 +64,8 @@ class MyLinearRegression:
             self.coef_ = coef
 
 if __name__ == '__main__':
-    #y = int(input("Choose a number: "))
-    #print(y, enlarge(y))
+    y = int(input("Choose a number: "))
+    print(y, enlarge(y))
 
     raw_data = load_wine()
     df = pd.DataFrame(data=raw_data['data'], columns=raw_data['feature_names'])
@@ -75,7 +76,7 @@ if __name__ == '__main__':
     y = 3.5*X.T[0]-1.2*X.T[1]+2*np.random.randn(20)
 
 import numpy as np
-    
+
 fig, ax = plt.subplots(1,2,figsize=(10,3))
 
 ax[0].scatter(X.T[0],y)
@@ -87,9 +88,9 @@ ax[1].grid(True)
 fig.tight_layout()
 plt.show()   
 
-    #mlr = MyLinearRegression()
-    #print(df.shape)
-    #print(mlr)
+mlr = MyLinearRegression()
+print(df.shape)
+print(mlr)
     
-    #X_train, X_val, X_test, y_train, y_val, y_test = train_validation_test_split(
-        #df[['ash', 'hue']], df['target'])
+X_train, X_val, X_test, y_train, y_val, y_test = train_validation_test_split(
+    df[['ash', 'hue']], df['target'])
