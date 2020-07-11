@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_wine
@@ -75,21 +74,22 @@ if __name__ == '__main__':
     X = 10*np.random.random(size=(20,2))
     y = 3.5*X.T[0]-1.2*X.T[1]+2*np.random.randn(20)
 
+import numpy as np
     
-    fig, ax = plt.subplots(1,2,figsize=(10,3))
+fig, ax = plt.subplots(1,2,figsize=(10,3))
 
-    ax[0].scatter(X.T[0],y)
-    ax[0].set_title("Output vs. first feature")
-    ax[0].grid(True)
-    ax[1].scatter(X.T[1],y)
-    ax[1].set_title("Output vs. second feature")
-    ax[1].grid(True)
-    fig.tight_layout()
-    plt.show()   
+ax[0].scatter(X.T[0],y)
+ax[0].set_title("Output vs. first feature")
+ax[0].grid(True)
+ax[1].scatter(X.T[1],y)
+ax[1].set_title("Output vs. second feature")
+ax[1].grid(True)
+fig.tight_layout()
+plt.show()   
 
     #mlr = MyLinearRegression()
     #print(df.shape)
     #print(mlr)
     
-    X_train, X_val, X_test, y_train, y_val, y_test = train_validation_test_split(
-        df[['ash', 'hue']], df['target'])
+    #X_train, X_val, X_test, y_train, y_val, y_test = train_validation_test_split(
+        #df[['ash', 'hue']], df['target'])
